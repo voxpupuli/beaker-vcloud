@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+require 'rubygems' unless defined?(Gem)
+require 'beaker-vcloud'
+
+VERSION_STRING =
+"
+                                 _ .--.
+                                ( `    )
+        beaker-vcloud         .-'      `--,
+                  _..----.. (             )`-.
+                .'_|` _|` _|(  .__,           )
+               /_|  _|  _|  _(        (_,  .-'
+              ;|  _|  _|  _|  '-'__,--'`--'
+              | _|  _|  _|  _| |
+          _   ||  _|  _|  _|  _| %s
+        _( `--.\\_|  _|  _|  _|/
+     .-'       )--,|  _|  _|.`
+    (__, (_      ) )_|  _| /
+      `-.__.\\ _,--'\\|__|__/
+                    ;____;
+                     \\YT/
+                      ||
+                     |\"\"|
+                     '=='
+"
+
+
+
+puts BeakerVcloud::VERSION
+
+exit 0
