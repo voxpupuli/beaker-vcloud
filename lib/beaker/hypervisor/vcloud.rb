@@ -1,5 +1,6 @@
 require 'yaml' unless defined?(YAML)
 require 'beaker/hypervisor/vmpooler'
+require 'beaker/hypervisor/vsphere_helper'
 require 'rbvmomi'
 
 module Beaker
