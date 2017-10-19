@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'stringify-hash', '~> 0.0.0'
   s.add_runtime_dependency 'rbvmomi', '~> 1.9'
   s.add_runtime_dependency 'beaker-vmpooler'
+  s.add_runtime_dependency 'beaker-vmware'
 
 end
 
