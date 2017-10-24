@@ -180,7 +180,7 @@ module Beaker
               @vsphere_helper.find_vms(host['vmhostname'])[host['vmhostname']].summary.guest.ipAddress != nil
             end
             host[:ip] = @vsphere_helper.find_vms(host['vmhostname'])[host['vmhostname']].summary.guest.ipAddress
-            enable_root(host)
+            enable_root(host) unless host.is_cygwin?
           end
         end
 
