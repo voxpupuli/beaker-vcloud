@@ -46,6 +46,25 @@ module Beaker
 
       end
 
+      it 'does not run enable_root on cygwin hosts' do
+        MockVsphereHelper.powerOff
+
+        opts = make_opts
+        opts[:pooling_api] = nil
+        opts[:datacenter] = 'testdc'
+
+        hosts = make_hosts
+        hosts.each do |host|
+          allow( host ).to receive( :is_cygwin? ).and_return( true )
+        end
+        vcloud = Beaker::Vcloud.new( hosts, opts )
+        allow( vcloud ).to receive( :require ).and_return( true )
+        allow( vcloud ).to receive( :sleep ).and_return( true )
+        expect( vcloud ).to receive( :enable_root ).never
+        vcloud.provision
+
+      end
+
     end
 
     describe "#cleanup" do
