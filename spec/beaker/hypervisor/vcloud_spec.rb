@@ -18,13 +18,22 @@ module Beaker
 
     describe "#provision" do
 
-      it 'warns about deprecated behavior if pooling_api is provided' do
+      it 'warns about deprecated behavior if pooling_api and not datacenter is provided' do
         opts = make_opts
         opts[:pooling_api] = 'testpool'
-        expect( opts[:logger] ).to receive(:warn).twice
-        expect{ hypervisor = Beaker::Vcloud.new( make_hosts, opts) }.to raise_exception
+        # this shim taken from vmpooler_spec.rb
+        allow_any_instance_of( Beaker::Vmpooler ).to \
+          receive(:load_credentials).and_return(fog_file_contents)
+        expect( opts[:logger] ).to receive(:warn).once
+        Beaker::Vcloud.new( make_hosts, opts)
       end
-      it 'instantiates self even if pooling_api is provided' do
+      it 'instantiates vmpooler if pooling_api and not datacenter is provided' do
+        opts = make_opts
+        opts[:pooling_api] = 'testpool'
+        hypervisor = Beaker::Vcloud.new( make_hosts, opts)
+        expect( hypervisor.class ).to be Beaker::Vmpooler
+      end
+      it 'instantiates self if datacenter is provided' do
         opts = make_opts
         opts[:pooling_api] = 'testpool'
         opts[:datacenter] = 'testdatacenter'

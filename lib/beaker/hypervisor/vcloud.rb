@@ -6,16 +6,22 @@ require 'rbvmomi'
 module Beaker
   class Vcloud < Beaker::Hypervisor
 
+    def self.new(vcloud_hosts, options)
+      # Deprecation warning for pre-vmpooler style hosts configuration.
+      if options['pooling_api'] && !options['datacenter']
+        options[:logger].warn "It looks like you may be trying to access vmpooler with `hypervisor: vcloud`. "\
+                              "This functionality has been deprecated. Please transition to `hypervisor: vmpooler`."
+        Beaker::Vmpooler.new(vcloud_hosts, options)
+      else
+        super
+      end
+    end
+
+
     def initialize(vcloud_hosts, options)
       @options = options
       @logger = options[:logger]
       @hosts = vcloud_hosts
-
-      # Deprecation warning for pre-vmpooler style hosts configuration.
-      if options['pooling_api'] && !options['datacenter']
-        @logger.warn "It looks like you may be trying to access vmpooler with `hypervisor: vcloud`."
-        @logger.warn "This functionality has been deprecated. Please use `hypervisor: vmpooler`."
-      end
 
       raise 'You must specify a datastore for vCloud instances!' unless @options['datastore']
       raise 'You must specify a folder for vCloud instances!' unless @options['folder']
