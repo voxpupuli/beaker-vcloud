@@ -17,7 +17,6 @@ module Beaker
       end
     end
 
-
     def initialize(vcloud_hosts, options)
       @options = options
       @logger = options[:logger]
