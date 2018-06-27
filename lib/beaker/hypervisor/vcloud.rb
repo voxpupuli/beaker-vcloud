@@ -7,7 +7,10 @@ module Beaker
   class Vcloud < Beaker::Hypervisor
 
     def self.new(vcloud_hosts, options)
-      if options['pooling_api']
+      # Deprecation warning for pre-vmpooler style hosts configuration.
+      if options['pooling_api'] && !options['datacenter']
+        options[:logger].warn "It looks like you may be trying to access vmpooler with `hypervisor: vcloud`. "\
+                              "This functionality has been deprecated. Please transition to `hypervisor: vmpooler`."
         Beaker::Vmpooler.new(vcloud_hosts, options)
       else
         super
