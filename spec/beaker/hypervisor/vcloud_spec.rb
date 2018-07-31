@@ -6,14 +6,16 @@ module Beaker
     before :each do
       MockVsphereHelper.set_config( fog_file_contents )
       MockVsphereHelper.set_vms( make_hosts() )
-     stub_const( "VsphereHelper", MockVsphereHelper )
-     stub_const( "Net", MockNet )
+      stub_const( "VsphereHelper", MockVsphereHelper )
+      stub_const( "Net", MockNet )
       json = double( 'json' )
       allow( json ).to receive( :parse ) do |arg|
         arg
       end
-     stub_const( "JSON", json )
+      stub_const( "JSON", json )
       allow( Socket ).to receive( :getaddrinfo ).and_return( true )
+      allow_any_instance_of( Beaker::Shared ).to receive( :get_fog_credentials ).and_return( fog_file_contents )
+      allow_any_instance_of( VsphereHelper ).to receive( :new ).and_return (MockVsphereHelper)
     end
 
     describe "#provision" do

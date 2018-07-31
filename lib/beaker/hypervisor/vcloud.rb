@@ -25,14 +25,16 @@ module Beaker
       raise 'You must specify a datastore for vCloud instances!' unless @options['datastore']
       raise 'You must specify a folder for vCloud instances!' unless @options['folder']
       raise 'You must specify a datacenter for vCloud instances!' unless @options['datacenter']
-      @vsphere_credentials = VsphereHelper.load_config(@options[:dot_fog])
+      @vcenter_credentials = get_fog_credentials(@options[:dot_fog], @options[:vcenter_instance] || :default)
     end
 
     def connect_to_vsphere
-      @logger.notify "Connecting to vSphere at #{@vsphere_credentials[:server]}" +
-        " with credentials for #{@vsphere_credentials[:user]}"
+      @logger.notify "Connecting to vSphere at #{@vcenter_credentials[:vsphere_server]}" +
+        " with credentials for #{@vcenter_credentials[:vsphere_username]}"
 
-      @vsphere_helper = VsphereHelper.new( @vsphere_credentials )
+      @vsphere_helper = VsphereHelper.new :server => @vcenter_credentials[:vsphere_server],
+                                          :user   => @vcenter_credentials[:vsphere_username],
+                                          :pass   => @vcenter_credentials[:vsphere_password]
     end
 
     def wait_for_dns_resolution host, try, attempts
