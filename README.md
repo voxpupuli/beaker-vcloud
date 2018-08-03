@@ -2,9 +2,13 @@
 
 Beaker library to use vcloud hypervisor
 
+# Legacy VMPooler Fallback
+
+In previous versions of this hypervisor, a shim was added to ease internal transition to a new hypervisor called vmpooler. This shim would automatically and silently promote hosts with `hypervisor: vcloud` to use the beaker-vmpooler hypervisor if certain conditions were met: the hosts file contained a `CONFIG[:pooling_api]` and not the otherwise required `:datacenter`. This fallback behavior is no longer supported; if applicable, you will see a warning message with upgrade instructions.
+
 # How to use this wizardry
 
-This is a gem that allows you to use hosts of vcloud hypervisor with [beaker](https://github.com/puppetlabs/beaker). One thing to note is that if you are using a `pooling api` in your hosts file, beaker-vcloud will automatically switch to [beaker-vmpooler](https://github.com/puppetlabs/beaker-vmpooler). 
+This is a gem that allows you to use hosts of vcloud hypervisor with [beaker](https://github.com/puppetlabs/beaker).
 
 ### Right Now? (beaker 3.x)
 
