@@ -1,5 +1,4 @@
 require 'yaml' unless defined?(YAML)
-require 'beaker/hypervisor/vmpooler'
 require 'beaker/hypervisor/vsphere_helper'
 require 'rbvmomi'
 
@@ -7,14 +6,13 @@ module Beaker
   class Vcloud < Beaker::Hypervisor
 
     def self.new(vcloud_hosts, options)
-      # Deprecation warning for pre-vmpooler style hosts configuration.
+      # Warning for pre-vmpooler style hosts configuration. TODO: remove this eventually.
       if options['pooling_api'] && !options['datacenter']
         options[:logger].warn "It looks like you may be trying to access vmpooler with `hypervisor: vcloud`. "\
-                              "This functionality has been deprecated. Please transition to `hypervisor: vmpooler`."
-        Beaker::Vmpooler.new(vcloud_hosts, options)
-      else
-        super
+                              "This functionality has been removed. Change your hosts to `hypervisor: vmpooler` "\
+                              "and remove unused :datacenter, :folder, and :datastore from CONFIG."
       end
+      super
     end
 
     def initialize(vcloud_hosts, options)

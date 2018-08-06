@@ -1,9 +1,7 @@
 require 'simplecov'
 require 'rspec/its'
 require 'beaker'
-require 'beaker/hypervisor/vmpooler'
-
-Dir.glob(Dir.pwd + '/lib/beaker/hypervisor/*.rb') {|file| require file}
+require 'beaker/hypervisor/vcloud'
 
 # setup & require beaker's spec_helper.rb
 beaker_gem_spec = Gem::Specification.find_by_name('beaker')
