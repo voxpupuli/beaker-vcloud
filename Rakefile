@@ -1,24 +1,13 @@
 require 'rspec/core/rake_task'
 
 namespace :test do
-
   namespace :spec do
-
     desc "Run spec tests"
     RSpec::Core::RakeTask.new(:run) do |t|
       t.rspec_opts = ['--color']
       t.pattern = 'spec/'
     end
-
-    desc "Run spec tests with coverage"
-    RSpec::Core::RakeTask.new(:coverage) do |t|
-      ENV['BEAKER_VCLOUD_COVERAGE'] = 'y'
-      t.rspec_opts = ['--color']
-      t.pattern = 'spec/'
-    end
-
   end
-
 end
 
 # namespace-named default tasks.
