@@ -1,5 +1,13 @@
 # beaker-vcloud
 
+[![License](https://img.shields.io/github/license/voxpupuli/beaker-vcloud.svg)](https://github.com/voxpupuli/beaker-vcloud/blob/master/LICENSE)
+[![Test](https://github.com/voxpupuli/beaker-vcloud/actions/workflows/test.yml/badge.svg)](https://github.com/voxpupuli/beaker-vcloud/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/voxpupuli/beaker-vcloud/branch/master/graph/badge.svg)](https://codecov.io/gh/voxpupuli/beaker-vcloud)
+[![Release](https://github.com/voxpupuli/beaker-vcloud/actions/workflows/release.yml/badge.svg)](https://github.com/voxpupuli/beaker-vcloud/actions/workflows/release.yml)
+[![RubyGem Version](https://img.shields.io/gem/v/beaker-vcloud.svg)](https://rubygems.org/gems/beaker-vcloud)
+[![RubyGem Downloads](https://img.shields.io/gem/dt/beaker-vcloud.svg)](https://rubygems.org/gems/beaker-vcloud)
+[![Donated by Puppet Inc](https://img.shields.io/badge/donated%20by-Puppet%20Inc-fb7047.svg)](#transfer-notice)
+
 Beaker library to use vcloud hypervisor
 
 # Legacy VMPooler Fallback
@@ -29,6 +37,24 @@ s.add_runtime_dependency 'beaker', '~>4.0'
 s.add_runtime_dependency 'beaker-vcloud'
 ~~~
 
-# Contributing
+## Transfer Notice
 
-Please refer to puppetlabs/beaker's [contributing](https://github.com/puppetlabs/beaker/blob/master/CONTRIBUTING.md) guide.
+This plugin was originally authored by [Puppet Inc](http://puppet.com).
+The maintainer preferred that Vox Pupuli take ownership of the module for future improvement and maintenance.
+Existing pull requests and issues were transferred over, please fork and continue to contribute at https://github.com/voxpupuli/beaker-vcloud
+
+Previously: https://github.com/puppetlabs/beaker-vcloud
+
+## License
+
+This gem is licensed under the Apache-2 license.
+
+## Release information
+
+To make a new release, please do:
+* update the version in lib/beaker-vcloud/version.rb
+* Install gems with `bundle install --with release --path .vendor`
+* generate the changelog with `bundle exec rake changelog`
+* Check if the new version matches the closed issues/PRs in the changelog
+* Create a PR with it
+* After it got merged, push a tag. GitHub actions will do the actual release to rubygems and GitHub Packages
