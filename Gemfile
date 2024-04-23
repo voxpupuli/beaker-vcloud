@@ -12,13 +12,6 @@ def location_for(place, fake_version = nil)
   end
 end
 
-
-# We don't put beaker in as a test dependency because we
-# don't want to create a transitive dependency
-group :acceptance_testing do
-  gem "beaker", *location_for(ENV['BEAKER_VERSION'] || '>= 3.0')
-end
-
 group :release do
   gem 'github_changelog_generator', require: false
 end
