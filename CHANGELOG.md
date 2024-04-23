@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.0.0](https://github.com/voxpupuli/beaker-vcloud/tree/2.0.0) (2024-04-23)
+
+[Full Changelog](https://github.com/voxpupuli/beaker-vcloud/compare/1.1.0...2.0.0)
+
+**Breaking changes:**
+
+- Drop Ruby 2.4/2.5/2.5 support [\#21](https://github.com/voxpupuli/beaker-vcloud/pull/21) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- add strict version constraints for dependencies & Build gem in strict mode [\#28](https://github.com/voxpupuli/beaker-vcloud/pull/28) ([bastelfreak](https://github.com/bastelfreak))
+- Apply our CI best practices [\#27](https://github.com/voxpupuli/beaker-vcloud/pull/27) ([bastelfreak](https://github.com/bastelfreak))
+- Implement voxpupli-rubocop & rubocop: autocorrect [\#26](https://github.com/voxpupuli/beaker-vcloud/pull/26) ([bastelfreak](https://github.com/bastelfreak))
+- Replace dead dependency rbvmomi with rbvmomi2 [\#23](https://github.com/voxpupuli/beaker-vcloud/pull/23) ([bastelfreak](https://github.com/bastelfreak))
+- Add Ruby 3.1/3.2/3.3 to CI [\#19](https://github.com/voxpupuli/beaker-vcloud/pull/19) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- Add missing beaker dependency [\#22](https://github.com/voxpupuli/beaker-vcloud/pull/22) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Update fakefs requirement from ~\> 0.6 to ~\> 2.5 [\#25](https://github.com/voxpupuli/beaker-vcloud/pull/25) ([dependabot[bot]](https://github.com/apps/dependabot))
+- dependabot: check for github actions and gems [\#18](https://github.com/voxpupuli/beaker-vcloud/pull/18) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [1.1.0](https://github.com/voxpupuli/beaker-vcloud/tree/1.1.0) (2021-08-09)
 
 [Full Changelog](https://github.com/voxpupuli/beaker-vcloud/compare/1.0.0...1.1.0)
