@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/voxpupuli/beaker-vcloud'
   s.summary     = 'Beaker DSL Extension Helpers!'
   s.description = 'For use for the Beaker acceptance testing tool'
-  s.license     = 'Apache2'
+  s.license     = 'Apache-2.0'
 
   s.files         = `git ls-files`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
@@ -19,14 +19,14 @@ Gem::Specification.new do |s|
 
   # Testing dependencies
   s.add_development_dependency 'fakefs', '~> 2.5'
-  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rake', '~> 13.2', '>= 13.2.1'
   s.add_development_dependency 'rspec', '~> 3.0'
-  s.add_development_dependency 'rspec-its'
+  s.add_development_dependency 'rspec-its', '~> 1.3'
   s.add_development_dependency 'voxpupuli-rubocop', '~> 2.6.0'
 
   # Run time dependencies
-  s.add_runtime_dependency 'beaker', '>= 4', '< 6'
-  s.add_runtime_dependency 'beaker-vmware'
+  s.add_runtime_dependency 'beaker', '~> 5.8'
+  s.add_runtime_dependency 'beaker-vmware', '~> 2.1'
   s.add_runtime_dependency 'rbvmomi2', '~> 3.7', '>= 3.7.1'
   s.add_runtime_dependency 'stringify-hash', '~> 0.0.0'
 end
