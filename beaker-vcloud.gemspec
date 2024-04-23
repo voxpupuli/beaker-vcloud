@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   # Testing dependencies
-  s.add_development_dependency 'fakefs', '~> 0.6'
+  s.add_development_dependency 'fakefs', '~> 2.5'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec', '~> 3.0'
   s.add_development_dependency 'rspec-its'
