@@ -51,6 +51,8 @@ module Beaker
 
     def booting_host(host, try, attempts)
       @logger.notify "Booting #{host['vmhostname']} (#{host.name}) and waiting for it to register with vSphere"
+      vm = @vsphere_helper.find_vms(host['vmhostname'])
+      @logger.debug("booting_host: vm => #{vm}")
       until @vsphere_helper.find_vms(host['vmhostname'])[host['vmhostname']].summary.guest.toolsRunningStatus == 'guestToolsRunning' and
             !@vsphere_helper.find_vms(host['vmhostname'])[host['vmhostname']].summary.guest.ipAddress.nil?
         raise "vSphere registration failed after #{@options[:timeout].to_i} seconds" unless try <= attempts
