@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/voxpupuli/beaker-vcloud/tree/2.1.0) (2024-05-28)
+
+[Full Changelog](https://github.com/voxpupuli/beaker-vcloud/compare/2.0.0...2.1.0)
+
+**Implemented enhancements:**
+
+- beaker: Allow 6.x [\#33](https://github.com/voxpupuli/beaker-vcloud/pull/33) ([bastelfreak](https://github.com/bastelfreak))
+- Run release tasks on Ruby 3.3 [\#30](https://github.com/voxpupuli/beaker-vcloud/pull/30) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Update voxpupuli-rubocop requirement from ~\> 2.6.0 to ~\> 2.7.0 [\#32](https://github.com/voxpupuli/beaker-vcloud/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [2.0.0](https://github.com/voxpupuli/beaker-vcloud/tree/2.0.0) (2024-04-23)
 
 [Full Changelog](https://github.com/voxpupuli/beaker-vcloud/compare/1.1.0...2.0.0)
