@@ -161,7 +161,7 @@ module Beaker
 
         try = (Time.now - start) / 5
         @vsphere_helper.wait_for_tasks(tasks, try, attempts)
-        @logger.notify format('Spent %.2f seconds deploying VMs', (Time.now - start))
+        @logger.notify format('Spent %.2f seconds deploying VMs', Time.now - start)
 
         try = (Time.now - start) / 5
         duration = run_and_report_duration do
