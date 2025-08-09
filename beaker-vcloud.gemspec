@@ -22,11 +22,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 13.2', '>= 13.2.1'
   s.add_development_dependency 'rspec', '~> 3.0'
   s.add_development_dependency 'rspec-its', '~> 1.3'
-  s.add_development_dependency 'voxpupuli-rubocop', '~> 2.8.0'
+  s.add_development_dependency 'voxpupuli-rubocop', '~> 3.1.0'
 
   # Run time dependencies
-  s.add_runtime_dependency 'beaker', '>= 5.8', '< 7'
-  s.add_runtime_dependency 'beaker-vmware', '~> 2.1'
-  s.add_runtime_dependency 'rbvmomi2', '~> 3.7', '>= 3.7.1'
-  s.add_runtime_dependency 'stringify-hash', '~> 0.0.0'
+  s.add_dependency 'beaker', '>= 5.8', '< 7'
+  s.add_dependency 'beaker-vmware', '~> 2.1'
+  s.add_dependency 'rbvmomi2', '~> 3.7', '>= 3.7.1'
+  s.add_dependency 'stringify-hash', '~> 0.0.0'
 end
