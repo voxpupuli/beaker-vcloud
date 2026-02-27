@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
 
   # Run time dependencies
   s.add_dependency 'beaker', '>= 5.8', '< 8'
-  s.add_dependency 'beaker-vmware', '~> 2.1'
+  s.add_dependency 'beaker-vmware', '>= 2.1', '< 4'
   s.add_dependency 'rbvmomi2', '~> 3.7', '>= 3.7.1'
   s.add_dependency 'stringify-hash', '~> 0.0.0'
 end
