@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.7'
 
   # Testing dependencies
-  s.add_development_dependency 'fakefs', '~> 2.5'
+  s.add_development_dependency 'fakefs', '>= 2.5', '< 4'
   s.add_development_dependency 'rake', '~> 13.2', '>= 13.2.1'
   s.add_development_dependency 'rspec', '~> 3.0'
   s.add_development_dependency 'rspec-its', '>= 1.3', '< 3'
