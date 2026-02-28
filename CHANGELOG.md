@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/voxpupuli/beaker-vcloud/tree/2.2.0) (2026-02-28)
+
+[Full Changelog](https://github.com/voxpupuli/beaker-vcloud/compare/2.1.0...2.2.0)
+
+**Implemented enhancements:**
+
+- Add Ruby 4 support  [\#51](https://github.com/voxpupuli/beaker-vcloud/pull/51) ([bastelfreak](https://github.com/bastelfreak))
+- fakefs: Allow 3.x [\#50](https://github.com/voxpupuli/beaker-vcloud/pull/50) ([bastelfreak](https://github.com/bastelfreak))
+- beaker-vmware: Allow 3.x [\#49](https://github.com/voxpupuli/beaker-vcloud/pull/49) ([bastelfreak](https://github.com/bastelfreak))
+- rspec-its: Allow 2.x [\#48](https://github.com/voxpupuli/beaker-vcloud/pull/48) ([bastelfreak](https://github.com/bastelfreak))
+- beaker: Allow 7.x [\#39](https://github.com/voxpupuli/beaker-vcloud/pull/39) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [2.1.0](https://github.com/voxpupuli/beaker-vcloud/tree/2.1.0) (2024-05-28)
 
 [Full Changelog](https://github.com/voxpupuli/beaker-vcloud/compare/2.0.0...2.1.0)
